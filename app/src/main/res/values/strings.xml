@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">SoftwareQAandTesting</string>
+
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="password">Pasword</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">E-mail</string>
+    <string name="first_number">First Number</string>
+    <string name="second_number">Second Number</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiple">*</string>
+    <string name="divide">/</string>
+    <string name="result">Result</string>
+    <string name="result_with_number">Result: %1$s</string>
+    <string name="clear">Clear</string>
+    <string name="try_again">Try Again</string>
+    <string name="save">Save</string>
+    <string name="list_calculator">List My Calculations</string>
+    <string name="format_result">Format Result</string>
+</resources>
