@@ -8,12 +8,13 @@ import androidx.lifecycle.ViewModel
 import com.example.softwareqaandtesting.database.RegisterDatabase
 import com.example.softwareqaandtesting.database.RegisterEntity
 import com.example.softwareqaandtesting.register.BaseViewModel
+import com.example.softwareqaandtesting.utils.SingleLiveEvent
 import kotlinx.coroutines.launch
 import java.util.regex.Pattern
 
 
 class LoginViewModel(application: Application): BaseViewModel(application) {
-    val userLiveData = MutableLiveData<RegisterEntity>()
+    val userLiveData = SingleLiveEvent<RegisterEntity>()
     val PASSWORD_PATTERN: Pattern = Pattern.compile(
         "^(?=.*[0-9])(?=\\S+\$)(?=.*[a-zA-ZığüşöçİĞÜŞÖÇ]).{8,50}\$")
 

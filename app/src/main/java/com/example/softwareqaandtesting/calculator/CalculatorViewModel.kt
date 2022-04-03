@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.softwareqaandtesting.database.CalculationEntity
 import com.example.softwareqaandtesting.database.RegisterDatabase
 import com.example.softwareqaandtesting.register.BaseViewModel
+import com.example.softwareqaandtesting.utils.SingleLiveEvent
 import kotlinx.coroutines.launch
 import java.text.DecimalFormat
 
@@ -15,7 +16,7 @@ class CalculatorViewModel(application: Application): BaseViewModel(application) 
     val resultLiveData: LiveData<Double>
         get() = _resultLiveData
 
-    val calculationListLiveData = MutableLiveData<ArrayList<CalculationEntity>>()
+    val calculationListLiveData = SingleLiveEvent<ArrayList<CalculationEntity>>()
 
 
 

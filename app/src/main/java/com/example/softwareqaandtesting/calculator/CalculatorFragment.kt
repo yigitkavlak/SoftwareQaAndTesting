@@ -13,6 +13,7 @@ import com.example.softwareqaandtesting.database.CalculationEntity
 import com.example.softwareqaandtesting.databinding.FragmentCalculatorBinding
 import com.example.softwareqaandtesting.listing.ListingFragment
 import com.example.softwareqaandtesting.observeOnce
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class CalculatorFragment : Fragment() {
@@ -33,6 +34,7 @@ class CalculatorFragment : Fragment() {
         super.onCreate(savedInstanceState)
         getIntent()
         viewModel = ViewModelProvider(requireActivity())[CalculatorViewModel::class.java]
+
     }
 
     override fun onCreateView(
@@ -41,14 +43,19 @@ class CalculatorFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentCalculatorBinding.inflate(layoutInflater, container, false)
+
+        observeResultLiveData()
+        observeListLiveData()
+
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpViews()
-        observeResultLiveData()
-        observeListLiveData()
+
+
     }
 
     private fun getIntent(){
@@ -65,7 +72,7 @@ class CalculatorFragment : Fragment() {
     }
 
     private fun observeListLiveData(){
-        viewModel.calculationListLiveData.observeOnce(viewLifecycleOwner) { list ->
+        viewModel.calculationListLiveData.observe(viewLifecycleOwner) { list ->
             if (!list.isNullOrEmpty()) {
                 activity?.supportFragmentManager?.let {
                     val frTransaction = it.beginTransaction()

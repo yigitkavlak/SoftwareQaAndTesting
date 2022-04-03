@@ -15,8 +15,6 @@ class RegisterDatabaseTest {
     private lateinit var db: RegisterDatabase
     private lateinit var registerDatabaseDao: RegisterDatabaseDao
 
-
-
     @Before
     fun setup() {
         val context = ApplicationProvider.getApplicationContext<Context>()
